@@ -36,10 +36,11 @@ app.set("trust proxy", 1);
 app.use(express.json({ limit: "4mb" }));
 app.use(helmet());
 const corsOptions = {
-  origin: '*',  // Allows requests from any origin
+  origin: ['https://affilcommerce-admin.vercel.app',], // Both production and local URLs
   methods: ['GET', 'POST', 'PATCH', 'DELETE', 'PUT'],
   allowedHeaders: ['Content-Type', 'Authorization'],
 };
+
 
 app.use(cors(corsOptions));
 
